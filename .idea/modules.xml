@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-config.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-config-build.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-config-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-core.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-core-build.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-core-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-server.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-server-build.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-server-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quizme.iml" filepath="$PROJECT_DIR$/.idea/modules/quizme.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quizme-build.iml" filepath="$PROJECT_DIR$/.idea/modules/quizme-build.iml" />
+    </modules>
+  </component>
+</project>
