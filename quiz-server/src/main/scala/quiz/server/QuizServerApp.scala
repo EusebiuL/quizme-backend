@@ -22,15 +22,15 @@ object QuizServerApp extends StreamApp[IO]{
 
       server <- QuizServer.concurrent[IO]
       (serverConfig, quizModule) <- server.init
-      exitCode <- serverStream[IO](config = serverConfig/*, service = quizModule.quizServerService*/)
+      exitCode <- serverStream[IO](config = serverConfig, service = quizModule.quizServerService)
     } yield exitCode
   }
 
 
-  private def serverStream[F[_]: ConcurrentEffect](config: QuizServerConfig/*, service: HttpService[F]*/): Stream[F, StreamApp.ExitCode] =
+  private def serverStream[F[_]: ConcurrentEffect](config: QuizServerConfig, service: HttpService[F]): Stream[F, StreamApp.ExitCode] =
     BlazeBuilder[F]
     .bindHttp(config.port, config.host)
-//    .mountService(service, config.apiRoot)
+    .mountService(service, config.apiRoot)
     .serve
 
 

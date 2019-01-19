@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algebra-auth.iml" filepath="$PROJECT_DIR$/.idea/modules/algebra-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algebra-auth-build.iml" filepath="$PROJECT_DIR$/.idea/modules/algebra-auth-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algebra-user.iml" filepath="$PROJECT_DIR$/.idea/modules/algebra-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algebra-user-build.iml" filepath="$PROJECT_DIR$/.idea/modules/algebra-user-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/organizer-user.iml" filepath="$PROJECT_DIR$/.idea/modules/organizer-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/organizer-user-build.iml" filepath="$PROJECT_DIR$/.idea/modules/organizer-user-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-config.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-config-build.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-config-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-core.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-core-build.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-core-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-db.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-db.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-db-build.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-db-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-effects.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-effects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-effects-build.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-effects-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-http.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-http.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-http-build.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-http-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-json.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-json.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-json-build.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-json-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-server.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/quiz-server-build.iml" filepath="$PROJECT_DIR$/.idea/modules/quiz-server-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/quizme.iml" filepath="$PROJECT_DIR$/.idea/modules/quizme.iml" />

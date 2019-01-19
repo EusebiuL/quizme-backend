@@ -25,7 +25,7 @@ final class QuizServer[F[_]: ConcurrentEffect] private (
       .apply[F]
       .delay(
         ModuleQuizServer
-          .concurrent()
+          .concurrent(implicitly)
       )
 }
 

@@ -9740,13 +9740,13 @@
 [debug] == resolving dependencies quiz-config#quiz-config$sources;0.1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [scala-tool->master]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
+[debug] 	[NOT REQUIRED] org.http4s#http4s-client_2.12;0.18.12!http4s-client_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.busymachines#busymachines-commons-core_2.12;0.3.0-RC8!busymachines-commons-core_2.12.jar(src)
-[debug] 	[NOT REQUIRED] co.fs2#fs2-core_2.12;0.10.4!fs2-core_2.12.jar(src)
+[debug] 	[NOT REQUIRED] io.chrisdavenport#log4cats-slf4j_2.12;0.0.6!log4cats-slf4j_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.http4s#http4s-websocket_2.12;0.2.1!http4s-websocket_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.typelevel#cats-effect_2.12;0.10.1!cats-effect_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.http4s#blaze-http_2.12;0.12.13!blaze-http_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.http4s#http4s-websocket_2.12;0.2.1!http4s-websocket_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.http4s#http4s-circe_2.12;0.18.12!http4s-circe_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.http4s#http4s-client_2.12;0.18.12!http4s-client_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.6!scala-library.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.6!scala-compiler.jar(src)
 [debug] 	[NOT REQUIRED] com.github.pureconfig#pureconfig-macros_2.12;0.9.1!pureconfig-macros_2.12.jar(src)
@@ -9757,6 +9757,7 @@
 [debug] 	[NOT REQUIRED] io.monix#monix-eval_2.12;3.0.0-RC1!monix-eval_2.12.jar(src)
 [debug] 	[NOT REQUIRED] io.monix#monix-reactive_2.12;3.0.0-RC1!monix-reactive_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.typelevel#spire_2.12;0.14.1!spire_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.spire-math#jawn-parser_2.12;0.11.1!jawn-parser_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.busymachines#busymachines-commons-effects_2.12;0.3.0-RC8!busymachines-commons-effects_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.log4s#log4s_2.12;1.6.1!log4s_2.12.jar(src)
@@ -9765,67 +9766,50 @@
 [debug] 	[NOT REQUIRED] org.reactivestreams#reactive-streams;1.0.2!reactive-streams.jar(src)
 [debug] 	[NOT REQUIRED] org.eclipse.jetty.alpn#alpn-api;1.1.3.v20160715!alpn-api.jar(src)
 [debug] 	[NOT REQUIRED] org.http4s#http4s-blaze-client_2.12;0.18.12!http4s-blaze-client_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.busymachines#busymachines-commons-effects-sync_2.12;0.3.0-RC8!busymachines-commons-effects-sync_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.http4s#http4s-core_2.12;0.18.12!http4s-core_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.busymachines#busymachines-commons-effects-sync_2.12;0.3.0-RC8!busymachines-commons-effects-sync_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.typelevel#spire-macros_2.12;0.14.1!spire-macros_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.busymachines#busymachines-commons-effects-async_2.12;0.3.0-RC8!busymachines-commons-effects-async_2.12.jar(src)
 [debug] 	[NOT REQUIRED] ch.qos.logback#logback-classic;1.2.3!logback-classic.jar(src)
 [debug] 	[NOT REQUIRED] co.fs2#fs2-scodec_2.12;0.10.4!fs2-scodec_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.twitter#hpack;1.0.2!hpack.jar(src)
-[debug] 	[NOT REQUIRED] io.chrisdavenport#log4cats-slf4j-internal_2.12;0.0.6!log4cats-slf4j-internal_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.25!slf4j-api.jar(src)
+[debug] 	[NOT REQUIRED] io.chrisdavenport#log4cats-slf4j-internal_2.12;0.0.6!log4cats-slf4j-internal_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.http4s#http4s-blaze-core_2.12;0.18.12!http4s-blaze-core_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.http4s#blaze-core_2.12;0.12.13!blaze-core_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.typelevel#cats-macros_2.12;1.1.0!cats-macros_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.github.pureconfig#pureconfig_2.12;0.9.1!pureconfig_2.12.jar(src)
 [debug] 	[NOT REQUIRED] io.chrisdavenport#linebacker_2.12;0.1.0!linebacker_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.typelevel#cats-core_2.12;1.1.0!cats-core_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.typelevel#macro-compat_2.12;1.1.1!macro-compat_2.12.jar(src)
 [debug] 	[NOT REQUIRED] io.monix#monix_2.12;3.0.0-RC1!monix_2.12.jar(src)
+[debug] 	[NOT REQUIRED] co.fs2#fs2-core_2.12;0.10.4!fs2-core_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.typelevel#cats-kernel_2.12;1.1.0!cats-kernel_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.busymachines#busymachines-commons-duration_2.12;0.3.0-RC8!busymachines-commons-duration_2.12.jar(src)
 [debug] 	[NOT REQUIRED] io.circe#circe-numbers_2.12;0.10.0!circe-numbers_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.systemfw#upperbound_2.12;0.1.1!upperbound_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.http4s#jawn-fs2_2.12;0.12.2!jawn-fs2_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.jctools#jctools-core;2.1.1!jctools-core.jar(src)
 [debug] 	[NOT REQUIRED] org.http4s#parboiled_2.12;1.0.0!parboiled_2.12.jar(src)
 [debug] 	[NOT REQUIRED] io.monix#monix-tail_2.12;3.0.0-RC1!monix-tail_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.http4s#http4s-jawn_2.12;0.18.12!http4s-jawn_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.jctools#jctools-core;2.1.1!jctools-core.jar(src)
 [debug] 	[NOT REQUIRED] org.typelevel#machinist_2.12;0.6.2!machinist_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.http4s#http4s-blaze-server_2.12;0.18.12!http4s-blaze-server_2.12.jar(src)
-[debug] 	[NOT REQUIRED] io.chrisdavenport#log4cats-slf4j_2.12;0.0.6!log4cats-slf4j_2.12.jar(src)
 [debug] 	[NOT REQUIRED] io.circe#circe-core_2.12;0.10.0!circe-core_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.spire-math#jawn-parser_2.12;0.11.1!jawn-parser_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.busymachines#busymachines-commons-effects-sync-cats_2.12;0.3.0-RC8!busymachines-commons-effects-sync-cats_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.typelevel#macro-compat_2.12;1.1.1!macro-compat_2.12.jar(src)
+[debug] 	[NOT REQUIRED] io.monix#monix-execution_2.12;3.0.0-RC1!monix-execution_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scodec#scodec-bits_2.12;1.1.5!scodec-bits_2.12.jar(src)
 [debug] 	[NOT REQUIRED] io.circe#circe-generic_2.12;0.10.0!circe-generic_2.12.jar(src)
 [debug] 	[NOT REQUIRED] io.circe#circe-jawn_2.12;0.9.3!circe-jawn_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.scodec#scodec-bits_2.12;1.1.5!scodec-bits_2.12.jar(src)
-[debug] 	[NOT REQUIRED] io.monix#monix-execution_2.12;3.0.0-RC1!monix-execution_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.http4s#http4s-dsl_2.12;0.18.12!http4s-dsl_2.12.jar(src)
 [debug] 	[NOT REQUIRED] ch.qos.logback#logback-core;1.2.3!logback-core.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe#config;1.3.1!config.jar(src)
 [debug] 	[NOT REQUIRED] co.fs2#fs2-io_2.12;0.10.4!fs2-io_2.12.jar(src)
-[debug] no default ivy user dir defined: set to /Users/eusebiu/.ivy2
+[debug] 	[NOT REQUIRED] com.typesafe#config;1.3.1!config.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.6!scala-reflect.jar(src)
 [debug] 	[NOT REQUIRED] org.typelevel#dogs-core_2.12;0.6.10!dogs-core_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.olegpy#better-monadic-for_2.12;0.2.4!better-monadic-for_2.12.jar(src)
 [debug] 	[NOT REQUIRED] jline#jline;2.14.6!jline.jar(src)
-[debug] including url: jar:file:/Users/eusebiu/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.6/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to /Users/eusebiu/.ivy2/cache
-[debug] including url: jar:file:/Users/eusebiu/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.6/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/Users/eusebiu/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.6/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/Users/eusebiu/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.6/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/Users/eusebiu/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.6/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (11ms)
-[debug] 	default cache: /Users/eusebiu/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] :: resolution report :: resolve 1045ms :: artifacts dl 31ms
+[debug] :: resolution report :: resolve 991ms :: artifacts dl 13ms
 [debug] 	report for quiz-config#quiz-config$sources;0.1.0-SNAPSHOT compile produced in /Users/eusebiu/quizmeBackend/quiz-config/target/scala-2.12/resolution-cache/reports/quiz-config-quiz-config$sources-compile.xml
 [debug] 	report for quiz-config#quiz-config$sources;0.1.0-SNAPSHOT runtime produced in /Users/eusebiu/quizmeBackend/quiz-config/target/scala-2.12/resolution-cache/reports/quiz-config-quiz-config$sources-runtime.xml
 [debug] 	report for quiz-config#quiz-config$sources;0.1.0-SNAPSHOT test produced in /Users/eusebiu/quizmeBackend/quiz-config/target/scala-2.12/resolution-cache/reports/quiz-config-quiz-config$sources-test.xml
@@ -9837,4 +9821,4 @@
 [debug] 	report for quiz-config#quiz-config$sources;0.1.0-SNAPSHOT plugin produced in /Users/eusebiu/quizmeBackend/quiz-config/target/scala-2.12/resolution-cache/reports/quiz-config-quiz-config$sources-plugin.xml
 [debug] 	report for quiz-config#quiz-config$sources;0.1.0-SNAPSHOT pom produced in /Users/eusebiu/quizmeBackend/quiz-config/target/scala-2.12/resolution-cache/reports/quiz-config-quiz-config$sources-pom.xml
 [debug] 	report for quiz-config#quiz-config$sources;0.1.0-SNAPSHOT scala-tool produced in /Users/eusebiu/quizmeBackend/quiz-config/target/scala-2.12/resolution-cache/reports/quiz-config-quiz-config$sources-scala-tool.xml
-[debug] 	resolve done (1045ms resolve - 31ms download)
+[debug] 	resolve done (991ms resolve - 13ms download)

@@ -7,7 +7,7 @@
 		revision="0.1.0-SNAPSHOT"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20181127221831"/>
+		date="20190119165040"/>
 	<dependencies>
 		<module organisation="com.github.pureconfig" name="pureconfig_2.12">
 			<revision name="0.9.1" status="release" pubdate="20180322210213" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/pureconfig/pureconfig" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="39">
@@ -190,7 +190,7 @@
 			</revision>
 		</module>
 		<module organisation="quiz-core" name="quiz-core_2.12">
-			<revision name="0.1.0-SNAPSHOT" status="integration" pubdate="20181127221824" resolver="inter-project" artresolver="inter-project" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="11">
+			<revision name="0.1.0-SNAPSHOT" status="integration" pubdate="20190119165035" resolver="inter-project" artresolver="inter-project" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="11">
 				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
 				<caller organisation="quiz-config" name="quiz-config$sources" conf="compile, runtime-internal, runtime, optional" rev="0.1.0-SNAPSHOT" rev-constraint-default="0.1.0-SNAPSHOT" rev-constraint-dynamic="0.1.0-SNAPSHOT" callerrev="0.1.0-SNAPSHOT"/>
 				<artifacts>

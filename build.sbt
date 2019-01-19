@@ -14,11 +14,13 @@ lazy val `quiz-server` = project
 )
   .dependsOn(
     `quiz-core`,
-    `quiz-config`
+    `quiz-config`,
+    `organizer-user`
   )
   .aggregate(
     `quiz-core`,
-    `quiz-config`
+    `quiz-config`,
+    `organizer-user`
   )
 
 lazy val `quiz-core` = project
@@ -54,6 +56,67 @@ lazy val `quiz-config` = project
     `quiz-core`
   )
 
+lazy val `quiz-json` = project
+  .settings(commonSettings)
+  .settings(libraryDependencies ++=Seq(
+    bmcEffects,
+    bmcJson
+  )
+  )
+  .dependsOn(
+    `quiz-core`,
+    `quiz-effects`
+  )
+
+lazy val `quiz-effects` = project
+  .settings(commonSettings)
+  .settings(sbtAssemblySettings)
+  .settings(
+    libraryDependencies ++= Seq(
+      catsEffect,
+      bmcEffects,
+      monix,
+      fs2,
+    )
+  )
+
+lazy val `quiz-http` = project
+  .settings(commonSettings)
+  .settings(sbtAssemblySettings)
+  .dependsOn(
+    `quiz-core`,
+    `quiz-json`,
+    `quiz-effects`
+  )
+
+lazy val `quiz-db` = project
+  .settings(commonSettings)
+  .settings(sbtAssemblySettings)
+
+lazy val `algebra-user` = project
+  .settings(commonSettings)
+  .settings(sbtAssemblySettings)
+  .dependsOn(
+    `quiz-db`,
+    `quiz-core`,
+    `quiz-effects`
+  )
+
+lazy val `algebra-auth` = project
+  .settings(commonSettings)
+  .settings(sbtAssemblySettings)
+  .dependsOn(
+   `algebra-user`
+  )
+
+lazy val `organizer-user` = project
+  .settings(commonSettings)
+  .settings(sbtAssemblySettings)
+  .dependsOn(
+    `algebra-auth`,
+    `quiz-json`,
+    `quiz-http`
+  )
 
 def commonSettings: Seq[Setting[_]] = Seq(
   scalaVersion := "2.12.6",

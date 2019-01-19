@@ -8,11 +8,25 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/algebra-auth" />
+            <option value="$PROJECT_DIR$/algebra-auth/project" />
+            <option value="$PROJECT_DIR$/algebra-user" />
+            <option value="$PROJECT_DIR$/algebra-user/project" />
+            <option value="$PROJECT_DIR$/organizer-user" />
+            <option value="$PROJECT_DIR$/organizer-user/project" />
             <option value="$PROJECT_DIR$/project" />
             <option value="$PROJECT_DIR$/quiz-config" />
             <option value="$PROJECT_DIR$/quiz-config/project" />
             <option value="$PROJECT_DIR$/quiz-core" />
             <option value="$PROJECT_DIR$/quiz-core/project" />
+            <option value="$PROJECT_DIR$/quiz-db" />
+            <option value="$PROJECT_DIR$/quiz-db/project" />
+            <option value="$PROJECT_DIR$/quiz-effects" />
+            <option value="$PROJECT_DIR$/quiz-effects/project" />
+            <option value="$PROJECT_DIR$/quiz-http" />
+            <option value="$PROJECT_DIR$/quiz-http/project" />
+            <option value="$PROJECT_DIR$/quiz-json" />
+            <option value="$PROJECT_DIR$/quiz-json/project" />
             <option value="$PROJECT_DIR$/quiz-server" />
             <option value="$PROJECT_DIR$/quiz-server/project" />
           </set>
