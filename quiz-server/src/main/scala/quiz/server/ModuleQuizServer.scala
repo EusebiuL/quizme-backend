@@ -1,12 +1,12 @@
 package quiz.server
 
 import cats.data.NonEmptyList
-import org.http4s.HttpService
-import org.http4s.dsl.Http4sDsl
+import org.http4s.HttpRoutes
 import quiz.algebra.user.ModuleUserAsync
 import quiz.effects.Async
 import quiz.organizer.user.ModuleUserOrganizer
 import cats.implicits._
+import org.mongodb.scala.{Document, MongoCollection, MongoDatabase}
 
 /**
   * @author Denis-Eusebiu Lazar eusebiu.lazar@busymachines.com
@@ -17,12 +17,14 @@ trait ModuleQuizServer[F[_]] extends ModuleUserOrganizer[F] with ModuleUserAsync
 
   implicit override def async: Async[F] = async
 
+  override def database: MongoDatabase
 
-  def quizServerService: HttpService[F] =  {
+
+  def quizServerService: HttpRoutes[F] =  {
     import cats.implicits._
-    val service: HttpService[F] = {
+    val service: HttpRoutes[F] = {
       NonEmptyList
-        .of[HttpService[F]](
+        .of[HttpRoutes[F]](
           userModuleService
       )
         .reduceK
@@ -33,7 +35,9 @@ trait ModuleQuizServer[F[_]] extends ModuleUserOrganizer[F] with ModuleUserAsync
 }
 
 object ModuleQuizServer {
-  def concurrent[F[_]](implicit a: Async[F]): ModuleQuizServer[F] = new ModuleQuizServer[F]{
+  def concurrent[F[_]](db: MongoDatabase)(implicit a: Async[F]): ModuleQuizServer[F] = new ModuleQuizServer[F]{
     implicit override def async: Async[F] = a
+
+    override def database: MongoDatabase = db
   }
 }

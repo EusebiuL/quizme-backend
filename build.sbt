@@ -92,6 +92,19 @@ lazy val `quiz-http` = project
 lazy val `quiz-db` = project
   .settings(commonSettings)
   .settings(sbtAssemblySettings)
+  .settings(
+    libraryDependencies ++= Seq(
+      mongoDriver,
+      bson,
+      mongoDriverAsync,
+      mongoDriverCore,
+      mongoScalaBson,
+      mongoReactiveDriver
+    )
+  )
+  .dependsOn(
+    `quiz-config`
+  )
 
 lazy val `algebra-user` = project
   .settings(commonSettings)
@@ -123,8 +136,8 @@ def commonSettings: Seq[Setting[_]] = Seq(
   parallelExecution in Test := false,
   addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.2.4"),
   scalacOptions ++= customScalaCompileFlags,
-  dependencyOverrides += "org.typelevel" %% "cats-core"   % "1.1.0",
-  dependencyOverrides += "org.typelevel" %% "cats-effect" % "0.10.1",
+  dependencyOverrides += "org.typelevel" %% "cats-core"   % catsVersion,
+  dependencyOverrides += "org.typelevel" %% "cats-effect" % catsEffectVersion,
   resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 )
 
@@ -218,44 +231,44 @@ lazy val bmcJson:          ModuleID = bmCommons("json")              withSources
 lazy val bmcSemVer:        ModuleID = bmCommons("semver")            withSources ()
 lazy val bmcSemVerParsers: ModuleID = bmCommons("semver-parsers")    withSources ()
 
+lazy val catsVersion = "1.5.0"
 //https://github.com/typelevel/cats
-lazy val catsCore: ModuleID = "org.typelevel" %% "cats-core" % "1.1.0" withSources ()
+lazy val catsCore: ModuleID = "org.typelevel" %% "cats-core" % catsVersion withSources ()
 
+lazy val catsEffectVersion = "1.2.0"
 //https://github.com/typelevel/cats-effect
-lazy val catsEffect: ModuleID = "org.typelevel" %% "cats-effect" % "1.0.0-RC2" withSources ()
+lazy val catsEffect: ModuleID = "org.typelevel" %% "cats-effect" % catsEffectVersion withSources ()
 
 //https://github.com/monix/monix
 lazy val monix: ModuleID = "io.monix" %% "monix" % "3.0.0-RC1" withSources ()
 
+lazy val fs2Version = "1.0.3"
 //https://github.com/functional-streams-for-scala/fs2
-lazy val fs2: ModuleID = "co.fs2" %% "fs2-core" % "0.10.4" withSources ()
-//lazy val fs2Io: ModuleID = "co.fs2" %% "fs2-io" % "1.0.0" withSources()
+lazy val fs2: ModuleID = "co.fs2" %% "fs2-core" % fs2Version withSources ()
 
 //https://circe.github.io/circe/
-lazy val circeVersion: String = "0.10.0"
+lazy val circeVersion: String = "0.11.0"
 
 lazy val circeCore:          ModuleID = "io.circe" %% "circe-core"           % circeVersion
 lazy val circeGeneric:       ModuleID = "io.circe" %% "circe-generic"        % circeVersion
 lazy val circeGenericExtras: ModuleID = "io.circe" %% "circe-generic-extras" % circeVersion
 
-lazy val attoParser: ModuleID = "org.tpolecat" %% "atto-core" % "0.6.2" withSources ()
-
 //https://github.com/http4s/http4s
-lazy val Http4sVersion = "0.18.12"
+lazy val Http4sVersion = "0.20.0-M5"
 lazy val http4sBlazeServer: ModuleID = "org.http4s" %% "http4s-blaze-server" % Http4sVersion withSources ()
 lazy val http4sBlazeClient: ModuleID = "org.http4s" %% "http4s-blaze-client" % Http4sVersion withSources ()
 lazy val http4sCirce:       ModuleID = "org.http4s" %% "http4s-circe"        % Http4sVersion withSources ()
 lazy val http4sDSL:         ModuleID = "org.http4s" %% "http4s-dsl"          % Http4sVersion withSources ()
 lazy val http4sWebSockets:  ModuleID = "org.http4s" %% "http4s-websocket"    % Http4sVersion withSources ()
-//https://github.com/tpolecat/doobie
-lazy val doobieVersion = "0.5.3"
 
-lazy val doobieHikari   = "org.tpolecat"   %% "doobie-hikari"   % doobieVersion withSources () // HikariCP transactor.
-lazy val doobiePostgres = "org.tpolecat"   %% "doobie-postgres" % doobieVersion withSources () // Postgres driver 42.2.2 + type mappings.
-lazy val doobieTK       = "org.tpolecat"   %% "doobie-specs2"   % doobieVersion % Test withSources () // specs2 support for typechecking statements.
-lazy val doobieH2       = "org.tpolecat"   %% "doobie-h2"       % doobieVersion % Test withSources ()
-lazy val H2             = "com.h2database" % "h2"               % "1.4.195"     withSources ()
-lazy val flyway         = "org.flywaydb"   % "flyway-core"      % "4.2.0"       withSources ()
+
+//http://mongodb.github.io/mongo-scala-driver/
+lazy val mongoDriver: ModuleID = "org.mongodb.scala" %% "mongo-scala-driver" % "2.6.0" withSources()
+lazy val bson: ModuleID = "org.mongodb" % "bson" % "3.10.1" withSources()
+lazy val mongoScalaBson: ModuleID = "org.mongodb.scala" %% "mongo-scala-bson" % "2.6.0" withSources()
+lazy val mongoDriverCore: ModuleID =  "org.mongodb" % "mongodb-driver-core" % "3.10.1" withSources()
+lazy val mongoDriverAsync: ModuleID = "org.mongodb" % "mongodb-driver-async" % "3.10.1" withSources()
+lazy val mongoReactiveDriver: ModuleID = "org.mongodb" % "mongodb-driver-reactivestreams" % "1.11.0" withSources()
 
 lazy val shapeless: ModuleID = "com.chuusai" %% "shapeless" % "2.3.3" withSources ()
 
@@ -284,14 +297,13 @@ lazy val tsec = Seq(
   "io.github.jmcardon" %% "tsec-libsodium"     % tsecV withSources (),
   "io.github.jmcardon" %% "tsec-jwt-mac"       % tsecV withSources (),
   "io.github.jmcardon" %% "tsec-jwt-sig"       % tsecV withSources (),
-  "io.github.jmcardon" %% "tsec-http4s"        % tsecV withSources (),
 )
 
 //============================================================================================
 //=========================================  logging =========================================
 //============================================================================================
 //https://github.com/ChristopherDavenport/log4cats
-lazy val log4cats = "io.chrisdavenport" %% "log4cats-slf4j" % "0.0.6" withSources ()
+lazy val log4cats = "io.chrisdavenport" %% "log4cats-slf4j" % "0.2.0" withSources ()
 
 //this is a Java library, notice that we used one single % instead of %%
 //it is the backend implementation used by log4cats
@@ -319,7 +331,7 @@ lazy val specs2: ModuleID = "org.specs2" %% "specs2-core" % "4.3.0" % Test withS
 lazy val pureConfig: ModuleID = "com.github.pureconfig" %% "pureconfig" % "0.9.1" withSources ()
 
 //https://github.com/ChristopherDavenport/linebacker
-lazy val linebacker: ModuleID = "io.chrisdavenport" % "linebacker_2.12" % "0.1.0" withSources ()
+lazy val linebacker: ModuleID = "io.chrisdavenport" % "linebacker_2.12" % "0.2.0" withSources ()
 
 //https://github.com/pathikrit/better-files
 lazy val betterFiles: ModuleID = "com.github.pathikrit" % "better-files_2.12" % "3.6.0" withSources ()
@@ -327,5 +339,5 @@ lazy val betterFiles: ModuleID = "com.github.pathikrit" % "better-files_2.12" % 
 lazy val amazonSdkS3: ModuleID = "com.amazonaws" % "aws-java-sdk-s3" % "1.11.396" withSources ()
 
 //https://github.com/SystemFw/upperbound
-lazy val upperbound: ModuleID = "org.systemfw" %% "upperbound" % "0.1.1" withSources()
+lazy val upperbound: ModuleID = "org.systemfw" %% "upperbound" % "0.2.0-M2" withSources()
 

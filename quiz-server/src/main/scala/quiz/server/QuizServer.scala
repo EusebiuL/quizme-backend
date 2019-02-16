@@ -1,8 +1,10 @@
 package quiz.server
 
 import cats.effect.{Concurrent, ConcurrentEffect}
-import fs2.Stream
 import busymachines.effects.Scheduler
+import cats.implicits._
+import org.mongodb.scala.MongoDatabase
+import quiz.db.config.{DatabaseConfig, DatabaseConfigAlgebra}
 
 /**
   * @author Denis-Eusebiu Lazar eusebiu.lazar@busymachines.com
@@ -13,25 +15,27 @@ final class QuizServer[F[_]: ConcurrentEffect] private (
     implicit val scheduler: Scheduler
 ) {
 
-  def init: Stream[F, (QuizServerConfig, ModuleQuizServer[F])] = {
+  def init: F[(QuizServerConfig, ModuleQuizServer[F])] = {
     for {
-      serverConfig <- Stream.eval(QuizServerConfig.default[F])
-      quizModule <- Stream.eval(moduleInit())
+      serverConfig <- QuizServerConfig.default[F]
+      databaseConfig <- DatabaseConfig.default[F]
+      database <- DatabaseConfigAlgebra.initialiseDb(databaseConfig)
+      quizModule <- moduleInit(database)
     } yield (serverConfig, quizModule)
   }
 
-  private def moduleInit(): F[ModuleQuizServer[F]] =
+  private def moduleInit(database: MongoDatabase): F[ModuleQuizServer[F]] =
     Concurrent
       .apply[F]
       .delay(
         ModuleQuizServer
-          .concurrent(implicitly)
+          .concurrent(database)(implicitly)
       )
 }
 
 object QuizServer {
   def concurrent[F[_]: ConcurrentEffect](
       implicit scheduler: Scheduler
-  ): Stream[F, QuizServer[F]] =
-    Stream.eval(Concurrent.apply[F].delay(new QuizServer[F]()))
+  ): F[QuizServer[F]] =
+    Concurrent.apply[F].delay(new QuizServer[F]())
 }

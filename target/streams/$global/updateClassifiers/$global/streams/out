@@ -328,13 +328,13 @@
 [debug] == resolving dependencies quizme#quizme$sources;0.1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [scala-tool->master]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
-[debug] 	[NOT REQUIRED] com.olegpy#better-monadic-for_2.12;0.2.4!better-monadic-for_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.6!scala-reflect.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.6!scala-library.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.6!scala-compiler.jar(src)
 [debug] 	[NOT REQUIRED] jline#jline;2.14.6!jline.jar(src)
-[debug] :: resolution report :: resolve 24ms :: artifacts dl 3ms
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.6!scala-library.jar(src)
+[debug] 	[NOT REQUIRED] com.olegpy#better-monadic-for_2.12;0.2.4!better-monadic-for_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.6!scala-reflect.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
+[debug] :: resolution report :: resolve 35ms :: artifacts dl 2ms
 [debug] 	report for quizme#quizme$sources;0.1.0-SNAPSHOT compile produced in /Users/eusebiu/quizmeBackend/target/scala-2.12/resolution-cache/reports/quizme-quizme$sources-compile.xml
 [debug] 	report for quizme#quizme$sources;0.1.0-SNAPSHOT runtime produced in /Users/eusebiu/quizmeBackend/target/scala-2.12/resolution-cache/reports/quizme-quizme$sources-runtime.xml
 [debug] 	report for quizme#quizme$sources;0.1.0-SNAPSHOT test produced in /Users/eusebiu/quizmeBackend/target/scala-2.12/resolution-cache/reports/quizme-quizme$sources-test.xml
@@ -346,4 +346,4 @@
 [debug] 	report for quizme#quizme$sources;0.1.0-SNAPSHOT plugin produced in /Users/eusebiu/quizmeBackend/target/scala-2.12/resolution-cache/reports/quizme-quizme$sources-plugin.xml
 [debug] 	report for quizme#quizme$sources;0.1.0-SNAPSHOT pom produced in /Users/eusebiu/quizmeBackend/target/scala-2.12/resolution-cache/reports/quizme-quizme$sources-pom.xml
 [debug] 	report for quizme#quizme$sources;0.1.0-SNAPSHOT scala-tool produced in /Users/eusebiu/quizmeBackend/target/scala-2.12/resolution-cache/reports/quizme-quizme$sources-scala-tool.xml
-[debug] 	resolve done (24ms resolve - 3ms download)
+[debug] 	resolve done (35ms resolve - 2ms download)

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ScalaCompilerConfiguration">
     <profile name="sbt 1" modules="quizmebackend" />
-    <profile name="sbt 2" modules="mtw-effects,quiz-config,quiz-core,organizer-user,quizme,quiz-effects,quiz-json,quiz-http,quiz-server,quiz-db,algebra-user,algebra-auth">
+    <profile name="sbt 2" modules="mtw-effects,quiz-server,quiz-effects,quiz-db,quiz-http,organizer-user,algebra-user,quiz-json,algebra-auth,quiz-core,quizme,quiz-config">
       <option name="implicitConversions" value="true" />
       <option name="higherKinds" value="true" />
       <option name="existentials" value="true" />

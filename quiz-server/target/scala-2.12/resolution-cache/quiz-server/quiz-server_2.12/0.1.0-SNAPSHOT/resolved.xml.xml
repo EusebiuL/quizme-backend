@@ -4,7 +4,7 @@
 		module="quiz-server_2.12"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20190119165038"
+		publication="20190216122603"
 	>
 		<description>
 		quiz-server
@@ -36,7 +36,7 @@
 		<dependency org="quiz-config" name="quiz-config_2.12" rev="0.1.0-SNAPSHOT" conf="compile->default(compile)"/>
 		<dependency org="organizer-user" name="organizer-user_2.12" rev="0.1.0-SNAPSHOT" conf="compile->default(compile)"/>
 		<dependency org="com.olegpy" name="better-monadic-for_2.12" rev="0.2.4" conf="plugin->default(compile)"/>
-		<override org="org.typelevel" module="cats-core_2.12" matcher="exact" rev="1.1.0"/>
-		<override org="org.typelevel" module="cats-effect_2.12" matcher="exact" rev="0.10.1"/>
+		<override org="org.typelevel" module="cats-core_2.12" matcher="exact" rev="1.5.0"/>
+		<override org="org.typelevel" module="cats-effect_2.12" matcher="exact" rev="1.2.0"/>
 	</dependencies>
 </ivy-module>

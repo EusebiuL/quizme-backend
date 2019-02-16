@@ -2,7 +2,7 @@ package quiz.organizer.user.rest
 
 import cats.data.NonEmptyList
 import cats.effect.Async
-import org.http4s.HttpService
+import org.http4s.HttpRoutes
 import org.http4s.dsl.Http4sDsl
 import quiz.algebra.user.{UserAlgebra, UserID}
 import cats.implicits._
@@ -17,7 +17,7 @@ final class UserRestOrganizer[F[_]](
     private val userAlgebra: UserAlgebra[F]
 ) (implicit val F: Async[F]) extends Http4sDsl[F] with UserOrganizerJSON{
 
-  private val userRestOrganizer: HttpService[F] = HttpService[F] {
+  private val userRestOrganizer: HttpRoutes[F] = HttpRoutes.of[F] {
     case GET -> Root / "user" / LongVar(id) =>
       for{
         user <- F.pure(UserID(id))
@@ -26,7 +26,7 @@ final class UserRestOrganizer[F[_]](
   }
 
 
-  val service: HttpService[F] = {
+  val service: HttpRoutes[F] = {
     import cats.implicits._
     NonEmptyList
       .of(

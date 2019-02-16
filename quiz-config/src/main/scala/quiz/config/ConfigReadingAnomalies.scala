@@ -1,6 +1,6 @@
 package quiz.config
 
-import busymachines.core.{AnomalousFailures, AnomalyID}
+import busymachines.core._
 import pureconfig.error.ConfigReaderFailures
 
 /**
